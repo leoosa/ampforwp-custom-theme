@@ -894,7 +894,7 @@ function ampforwp_custom_style() {
 		text-align: center; 
 	} 
     .amp-post-social-share ul {
-        margin:0;
+        margin: 1.5em 0;
     }
 	.amp-post-social-share li{
 		display: inline-block;
