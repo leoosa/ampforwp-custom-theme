@@ -32,17 +32,25 @@
 							    layout="responsive"
 							    alt="an image">
 							</amp-img>
-							<header class="amp-wp-article-header ampforwp-title">
-                                <h1 class="amp-wp-title"><?php echo wp_kses_data( $this->get( 'post_title' ) ); ?></h1>
-								<?php $post_author = $this->get( 'post_author' ); if ( $post_author ) : ?>
-									<div class="ampforwp-meta-info">							
-										<span>
-                                            By <?php echo esc_html( $post_author->display_name ); ?>
-                                        </span>
-									</div>
-								<?php endif; ?>
-							</header>
-						</div><?php } ?>
+							<div class="post_category">
+								<?php $categories = get_the_category();
+								if ( ! empty( $categories ) ) {
+								    echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '" class="post_category_name">' . esc_html( $categories[0]->name ) . '</a>';
+								}?>
+							</div>
+						</div>
+						<header class="amp-wp-article-header ampforwp-title">
+                            <h1 class="amp-wp-title"><?php echo wp_kses_data( $this->get( 'post_title' ) ); ?></h1>
+							<?php $post_author = $this->get( 'post_author' ); if ( $post_author ) : ?>
+								<div class="ampforwp-meta-info">							
+									<span>
+                                        By <?php echo esc_html( $post_author->display_name ); ?> &#183; <?php echo get_the_date(); ?> &#183;
+                                     
+                                    </span>
+								</div>
+							<?php endif; ?>
+						</header>
+						<?php } ?>
 <!-- Featured Image Ends -->  
 
 <!-- Social Sharing Starts -->  

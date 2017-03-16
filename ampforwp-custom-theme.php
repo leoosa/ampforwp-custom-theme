@@ -81,12 +81,37 @@ function ampforwp_custom_footer_file($file, $type ){
 }
 add_action( 'amp_post_template_head', 'amp_post_template_add_custom_google_font');
 
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0 View";
+    }
+    return $count.' Views';
+}
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+// Remove issues with prefetching adding extra views
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
 
 // Loading Custom Google Fonts in the theme
 function amp_post_template_add_custom_google_font( $amp_template ) {
     $font_urls = $amp_template->get( 'font_urls', array() );
-	$font_urls['source_serif_pro'] = 'https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600|Source+Sans+Pro:400,700';  ?>
-<link rel="stylesheet" href="<?php echo esc_url( $font_urls['source_serif_pro'] ); ?>">
+	$font_urls['lovecraft_fonts'] = 'https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Rubik:400,400i,500';  ?>
+<link rel="stylesheet" href="<?php echo esc_url( $font_urls['lovecraft_fonts'] ); ?>">
 <?php }
 
 

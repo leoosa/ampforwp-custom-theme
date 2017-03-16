@@ -27,9 +27,8 @@
 <!-- Header Site Title and Logo End -->  
 
 <!-- Navigation Menu Icon Start -->  
-  <div on='tap:sidebar.toggle' role="button" tabindex="0" class="nav_container">
-      <a href="#" class="toggle-text">
-          <span></span>
+  <div on='tap:sidebar.toggle' role="button" tabindex="0" class="burger-container">
+      <a href="#" class="burger">
           <span></span>
           <span></span>
       </a>
@@ -41,9 +40,10 @@
 </header>
 
 <!-- Navigation Menu Output Start -->  
-<amp-sidebar id='sidebar' layout="nodisplay" side="right">
-    <div class="toggle-navigationv2">
-      <div role="button" tabindex="0" on='tap:sidebar.close' class="close-nav">X</div>
+<amp-sidebar id='sidebar' layout="nodisplay" side="left">
+    <div class="burger-container">
+      <div role="button" tabindex="0" on='tap:sidebar.close' class="burger"><span></span>
+          <span></span></div>
       <?php if( has_nav_menu( 'amp-menu' ) ) { ?>
         <div class="navigation_heading">
             <?php echo esc_html( $redux_builder_amp['amp-translator-navigate-text'] ); ?>
