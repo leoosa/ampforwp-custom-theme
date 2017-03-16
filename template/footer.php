@@ -8,5 +8,6 @@
           ?>
       </p>
   </div>
+  
 </footer>
 <?php do_action('ampforwp_global_after_footer'); ?>

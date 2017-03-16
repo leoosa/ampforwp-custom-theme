@@ -76,7 +76,14 @@
 						} 
 						
 					do_action('ampforwp_inside_post_content_after') ?>
-
+<!-- Social Sharing Starts -->  
+					<div class="amp-post-social-share">
+						<ul>
+							<li class="twitter"><a href="https://twitter.com/intent/tweet?status=<?php echo wp_kses_data( $this->get( 'post_title' ) ); ?> <?php echo wp_kses_data( get_permalink() ) . AMP_QUERY_VAR ; ?>">Tweet This</a></li> 
+							<li class="facebook"><a href="https://www.facebook.com/share.php?u=<?php echo wp_kses_data( get_permalink() ) . AMP_QUERY_VAR ; ?>&t=<?php echo $this->get( 'post_title' ); ?>">Share This</a></li>
+						</ul>					
+					</div>
+<!-- Social Sharing Ends -->  
 				</div>
 <!-- Article Content Ends -->  
 
@@ -86,15 +93,14 @@
 				</div>
 <!-- Related Posts End -->  
 
-<!-- Comment Button Start -->  
-				<?php if ( comments_open() ) { ?>
-					<div class="comment-button-wrapper">
-				    	<a href="<?php echo get_permalink().'#commentform' ?>"> Leave a Comment </a>
-					</div>
-				<?php } ?>
-<!-- Comment Button End -->  
-
-
+<!-- Call-to-action Buttons Start -->  
+				<div class="text-center">
+					<?php if ( comments_open() ) { ?>
+					   	<a class="button button-outlined" href="<?php echo get_permalink().'#commentform' ?>"> Leave a Comment </a>
+					<?php } ?>
+				    <a class="button button-cta" href="<?php echo get_permalink().'#commentform' ?>"> Full Version </a>
+				</div>	
+<!-- Call-to-action Buttons End -->  
 			<?php do_action('ampforwp_post_after_design_elements') ?>
 		</article>
 	</main>
