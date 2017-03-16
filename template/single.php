@@ -98,7 +98,7 @@
 					<?php if ( comments_open() ) { ?>
 					   	<a class="button button-outlined" href="<?php echo get_permalink().'#commentform' ?>"> Leave a Comment </a>
 					<?php } ?>
-				    <a class="button button-cta" href="<?php echo get_permalink().'#commentform' ?>"> Full Version </a>
+				    <a class="button button-cta" href="<?php echo get_permalink() ?>"> Full Version </a>
 				</div>	
 <!-- Call-to-action Buttons End -->  
 			<?php do_action('ampforwp_post_after_design_elements') ?>
