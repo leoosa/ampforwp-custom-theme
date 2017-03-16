@@ -893,6 +893,9 @@ function ampforwp_custom_style() {
 	.amp-post-social-share {
 		text-align: center; 
 	} 
+    .amp-post-social-share ul {
+        margin:0;
+    }
 	.amp-post-social-share li{
 		display: inline-block;
 	}
@@ -1114,8 +1117,10 @@ function ampforwp_custom_style() {
         border-color: #ccc;
     }
     a.button-cta {
-        background: #94adff;
-        border-color:#94adff;
+/*        background: #94adff;
+        border-color:#94adff;*/
+        background: #000;
+        border-color:#000;
         color:#fff;
         padding:8px 30px;
     }
