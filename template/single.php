@@ -20,11 +20,12 @@
 			<?php do_action('ampforwp_post_before_design_elements') ?>
 
 <!-- Featured Image Starts -->  
-				<?php if ( has_post_thumbnail() ) { 
+				
+						<div class="ampforwp-featured-holder">
+						<?php if ( has_post_thumbnail() ) { 
 						$thumb_id = get_post_thumbnail_id();
 						$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
 						$thumb_url = $thumb_url_array[0]; ?>
-						<div class="ampforwp-featured-holder">
 							<amp-img
 							    src="<?php echo $thumb_url ?>"		   
 							    width="<?php echo $thumb_url_array[1] ?>"
@@ -32,6 +33,7 @@
 							    layout="responsive"
 							    alt="an image">
 							</amp-img>
+							<?php } ?>
 							<div class="post_category">
 								<?php $categories = get_the_category();
 								if ( ! empty( $categories ) ) {
@@ -50,7 +52,7 @@
 								</div>
 							<?php endif; ?>
 						</header>
-						<?php } ?>
+						
 <!-- Featured Image Ends -->  
 
 <!-- Social Sharing Starts -->  

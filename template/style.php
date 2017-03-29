@@ -888,11 +888,10 @@ function ampforwp_custom_style() {
 	/* Featured Area */
 	.ampforwp-featured-holder {
 		position: relative;		
-		background: rgba(0,0,0,0.6);
+		/*background: rgba(0,0,0,0.6);*/
 		margin-bottom: 11px;
-	}
-	.ampforwp-featured-holder {
-	    align-content: stretch;
+        align-content: stretch;
+        min-height: 15px;
 	}
 	.amp-wp-title {	 
 		/*color: #fff ;*/
