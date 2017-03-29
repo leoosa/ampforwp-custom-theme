@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="dns-prefetch" href="https://cdn.ampproject.org">
+<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
 <?php
 global $redux_builder_amp;
 if ( is_home() || is_front_page()  || ( is_archive() && $redux_builder_amp['ampforwp-archive-support'] ) ){
